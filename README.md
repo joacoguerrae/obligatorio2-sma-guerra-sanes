@@ -60,27 +60,6 @@ alternados multiagente, sobre el template de la cátedra (`base/`).
    `.venv` recién creado.
 4. Ejecutar las celdas. La primera celda de cada notebook agrega la raíz del
    proyecto al `sys.path`, así que los `import base/agents/games` funcionan tanto si
-   instalaste el proyecto (`pip install -e .`) como si no.
+   se instalo el proyecto (`pip install -e .`) como si no.
 
-> Cada notebook es autocontenido; pueden correrse en cualquier orden. El
-> recomendado para leer es `01 → 05` y luego `INFORME.pdf`.
 
-## Notas
-
-- **Tiempos de ejecución.** Algunos experimentos son costosos (especialmente
-  `02_nocca_nocca`, por el gran espacio de acciones, y los barridos de ISMCTS).
-  Para acelerar, bajar los parámetros `NG` / `n_games` / `simulations` al inicio de
-  cada notebook. Cada notebook indica su costo aproximado.
-- **MiniMax** se usa tal cual lo provee la cátedra (sin poda alfa-beta); por eso en
-  Tic-Tac-Toe se acota la profundidad y en Nocca-Nocca se trabaja a profundidad
-  baja con la función de evaluación.
-- **Kuhn 2P** (`games/kuhn.py`), **Kuhn 3P** (`games/kuhn3.py`) y **Leduc**
-  (`games/leduc.py`) son las versiones de la **cátedra**. La Leduc envuelve
-  `pettingzoo.classic.leduc_holdem_v4` (rlcard), por eso `requirements.txt` usa
-  `pettingzoo[classic]`. A las tres se les agregó solo `random_change`
-  (determinización para ISMCTS); a Leduc además un `clone()` correcto (el
-  `deepcopy` del entorno de PettingZoo reinicia el estado interno del juego).
-- **Costo:** CFR e ISMCTS sobre la Leduc de la cátedra (rlcard) son **bastante más
-  lentos** que sobre Kuhn, por el costo de clonar el entorno. `05_leduc.ipynb` usa
-  pocas iteraciones/simulaciones por eso; subirlas mejora la calidad a más tiempo.
-- **Uso de IA generativa:** ver sección 11 de `INFORME.pdf`.
