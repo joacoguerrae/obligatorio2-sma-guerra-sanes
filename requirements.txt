@@ -1,0 +1,12 @@
+# Obligatorio 2 - Sistemas Multiagente
+# Dependencias para correr los notebooks de experimentacion.
+# Probado con Python 3.11+ (en el entorno original: Python 3.14).
+
+numpy>=2.0
+gymnasium>=1.2
+pettingzoo[classic]>=1.25     # 'classic' trae rlcard + pygame (necesarios para Leduc)
+matplotlib>=3.8
+seaborn>=0.13
+pandas>=2.0
+tqdm>=4.66
+ipykernel>=6.0
